@@ -4,15 +4,18 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.Reader;
-import java.util.Iterator;
+import java.util.List;
 
 public class OpenCSVBuilder implements ICSVBuilder {
     @Override
-    public <E> Iterator<E> getCSVFileIterator(Reader reader, Class csvClass) {
+    public List getCSVFileList(Reader reader, Class csvClass) {
+        return getCSVBean(reader, csvClass).parse();
+    }
+
+    private <E> CsvToBean<E> getCSVBean(Reader reader, Class csvClass) {
         CsvToBeanBuilder<E> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
         csvToBeanBuilder.withType(csvClass);
         csvToBeanBuilder.withIgnoreLeadingWhiteSpace(true);
-        CsvToBean<E> csvToBean = csvToBeanBuilder.build();
-        return csvToBean.iterator();
+        return csvToBeanBuilder.build();
     }
 }
