@@ -9,7 +9,7 @@ public class CensusAnalyserException extends RuntimeException{
     }
 
     public enum ExceptionType {
-        CENSUS_FILE_PROBLEM
+        CSV_WRONG_HEADER, CENSUS_FILE_PROBLEM
 
     }
 }
