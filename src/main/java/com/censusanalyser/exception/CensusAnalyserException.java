@@ -1,4 +1,4 @@
-package com.censusanalyser;
+package com.censusanalyser.exception;
 
 public class CensusAnalyserException extends RuntimeException{
     public final ExceptionType type;
@@ -9,7 +9,7 @@ public class CensusAnalyserException extends RuntimeException{
     }
 
     public enum ExceptionType {
-        CSV_WRONG_HEADER, CENSUS_FILE_PROBLEM
+        CENSUS_FILE_PROBLEM;
 
     }
 }

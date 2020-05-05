@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.CensusAnalyserTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-05-04T21:43:56" hostname="DESKTOP-TP3R9VK" time="1.346">
+<testsuite name="com.censusanalyser.CensusAnalyserTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-05-05T17:07:05" hostname="DESKTOP-TP3R9VK" time="4.296">
   <properties/>
-  <testcase name="givenIndianStateCSV_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.009"/>
-  <testcase name="givenIndianStateCSV_ShouldReturnExactCount" classname="com.censusanalyser.CensusAnalyserTest" time="0.728"/>
-  <testcase name="givenIndianStateCSV_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.0"/>
-  <testcase name="givenIndianCensusCSVFile_ShouldReturnsCorrectRecords" classname="com.censusanalyser.CensusAnalyserTest" time="0.6"/>
-  <testcase name="givenStateCensusCsvFile_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.0"/>
+  <testcase name="givenIndianStateCSV_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.163"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnState_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="3.815"/>
+  <testcase name="givenIndianStateCSV_ShouldReturnExactCount" classname="com.censusanalyser.CensusAnalyserTest" time="0.157"/>
+  <testcase name="givenIndianStateCSV_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.001"/>
+  <testcase name="givenIndianCensusCSVFile_ShouldReturnsCorrectRecords" classname="com.censusanalyser.CensusAnalyserTest" time="0.141"/>
+  <testcase name="givenStateCensusCsvFile_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.005"/>
   <testcase name="givenIndiaCensusData_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
