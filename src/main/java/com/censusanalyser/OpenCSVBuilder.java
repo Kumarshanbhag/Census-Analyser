@@ -4,12 +4,13 @@ import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.Reader;
+import java.util.Iterator;
 import java.util.List;
 
 public class OpenCSVBuilder implements ICSVBuilder {
     @Override
-    public List getCSVFileList(Reader reader, Class csvClass) {
-        return getCSVBean(reader, csvClass).parse();
+    public Iterator getCSVFileIterator(Reader reader, Class csvClass) {
+        return this.getCSVBean(reader, csvClass).iterator();
     }
 
     private <E> CsvToBean<E> getCSVBean(Reader reader, Class csvClass) {

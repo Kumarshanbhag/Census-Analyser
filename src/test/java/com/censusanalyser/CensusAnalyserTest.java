@@ -1,5 +1,7 @@
 package com.censusanalyser;
 
+import com.censusanalyser.exception.CensusAnalyserException;
+import com.censusanalyser.model.IndiaCensusCSV;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,7 +11,7 @@ public class CensusAnalyserTest {
     private static final String INDIA_CENSUS_CSV_FILE_PATH = "./src/test/resources/IndiaStateCensusData.csv";
     private static final String WRONG_INDIA_CENSUS_CSV_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
     private static final String WRONG_INDIA_CENSUS_CSV_FILE_TYPE = "./src/test/resources/IndiaStateCensusData.json";
-    private static final String INDIA_STATE_CSV = "./src/test/resources/IndiaStateCode.csv";
+    private static final String INDIA_STATE_CSV_FILE_PATH = "./src/test/resources/IndiaStateCode.csv";
     private static final String WRONG_INDIA_STATE_CSV_FILE_PATH = "./src/main/resources/IndiaStateCode.csv";
     private static final String WRONG_INDIA_STATE_CSV_FILE_TYPE = "./src/main/resources/IndiaStateCode.json";
 
@@ -48,8 +50,9 @@ public class CensusAnalyserTest {
     //UC2
     @Test
     public void givenIndianStateCSV_ShouldReturnExactCount() {
-        int numOfStateCode = censusAnalyser.loadIndiaStateCode(INDIA_STATE_CSV);
-        Assert.assertEquals(37, numOfStateCode);
+        censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+        int numOfStateCode = censusAnalyser.loadIndiaStateCode(INDIA_STATE_CSV_FILE_PATH);
+        Assert.assertEquals(29, numOfStateCode);
     }
 
     @Test

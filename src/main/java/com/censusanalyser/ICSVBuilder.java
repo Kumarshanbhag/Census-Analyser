@@ -1,8 +1,10 @@
 package com.censusanalyser;
 
-import java.io.Reader;
-import java.util.List;
+import com.censusanalyser.model.IndiaCensusCSV;
 
-public interface ICSVBuilder {
-    public List getCSVFileList(Reader reader, Class csvClass);
+import java.io.Reader;
+import java.util.Iterator;
+
+public interface ICSVBuilder<E> {
+    public Iterator<E> getCSVFileIterator(Reader reader, Class<IndiaCensusCSV> indiaCensusCSVClass);
 }
