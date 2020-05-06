@@ -26,10 +26,9 @@ public class CensusAnalyser {
         try (Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));) {
             ICSVBuilder csvBuilder = CSVBuilderFactory.createCSVBuilder();
             Iterator<IndiaCensusCSV> censusCSVFileIterator = csvBuilder.getCSVFileIterator(reader,IndiaCensusCSV.class);
-            while(censusCSVFileIterator.hasNext()){
-                IndiaCensusCSV ind = censusCSVFileIterator.next();
-                this.censusMap.put(ind.state, new IndiaCensusDAO(ind));
-            }
+            Iterable<IndiaCensusCSV> csvIterable = () -> censusCSVFileIterator;
+            StreamSupport.stream(csvIterable.spliterator(),false)
+                    .forEach(csvCensus -> censusMap.put(csvCensus.state, new IndiaCensusDAO(csvCensus)));
             censusList = censusMap.values().stream().collect(Collectors.toList());
             return censusMap.size();
         } catch (IOException e) {
