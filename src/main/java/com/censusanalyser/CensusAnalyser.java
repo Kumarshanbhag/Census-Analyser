@@ -59,8 +59,11 @@ public class CensusAnalyser {
         if(sortOn == "state") {
             censusComparator = Comparator.comparing(census -> census.state);
         }
-        if(sortOn == "population") {
+        else if(sortOn == "population") {
             censusComparator = Comparator.comparing(census -> census.population);
+        }
+        else if(sortOn == "populationDensity") {
+            censusComparator = Comparator.comparing(census -> census.densityPerSqKm);
         }
         this.sort(censusComparator);
         String sortedStateCensus = new Gson().toJson(censusList);
