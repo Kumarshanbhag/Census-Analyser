@@ -74,6 +74,8 @@ public class CensusAnalyser {
         }
         if (sortOn == "state") {
             censusComparator = Comparator.comparing(census -> census.state);
+        } else if (sortOn == "stateCode") {
+            censusComparator = Comparator.comparing(census -> census.stateCode);
         } else if (sortOn == "population") {
             censusComparator = Comparator.comparing(census -> census.population);
         } else if (sortOn == "populationDensity") {
