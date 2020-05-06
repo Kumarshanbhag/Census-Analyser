@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.censusanalyser.CensusAnalyserTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2020-05-06T04:38:26" hostname="DESKTOP-TP3R9VK" time="1.832">
+<testsuite name="com.censusanalyser.CensusAnalyserTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2020-05-06T04:46:13" hostname="DESKTOP-TP3R9VK" time="2.474">
   <properties/>
-  <testcase name="givenIndianCensusData_WhenSortedOnPopulationDensityAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.009"/>
-  <testcase name="givenIndianCensusData_WhenSortedOnPopulation_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.968"/>
-  <testcase name="givenIndianCensusData_WhenSortedOnPopulationAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.006"/>
-  <testcase name="givenIndianStateCSV_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.009"/>
-  <testcase name="givenIndianCensusData_WhenSortedOnState_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.379"/>
-  <testcase name="givenIndianCensusData_WhenSortedOnStateAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.0"/>
-  <testcase name="givenIndianStateCSV_ShouldReturnExactCount" classname="com.censusanalyser.CensusAnalyserTest" time="0.241"/>
-  <testcase name="givenIndianStateCSV_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.003"/>
-  <testcase name="givenIndianCensusCSVFile_ShouldReturnsCorrectRecords" classname="com.censusanalyser.CensusAnalyserTest" time="0.113"/>
-  <testcase name="givenStateCensusCsvFile_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.002"/>
-  <testcase name="givenIndiaCensusData_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.001"/>
-  <testcase name="givenIndianCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.066"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnArea_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="1.095"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnPopulationDensityAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.005"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnPopulation_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.634"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnPopulationAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.001"/>
+  <testcase name="givenIndianStateCSV_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.005"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnState_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.328"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnStateAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.011"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnAreaAndNoDataFound_ShouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.0"/>
+  <testcase name="givenIndianStateCSV_ShouldReturnExactCount" classname="com.censusanalyser.CensusAnalyserTest" time="0.166"/>
+  <testcase name="givenIndianStateCSV_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.002"/>
+  <testcase name="givenIndianCensusCSVFile_ShouldReturnsCorrectRecords" classname="com.censusanalyser.CensusAnalyserTest" time="0.071"/>
+  <testcase name="givenStateCensusCsvFile_WhenTypeIncorrect_shouldReturnException" classname="com.censusanalyser.CensusAnalyserTest" time="0.001"/>
+  <testcase name="givenIndiaCensusData_WithWrongFile_ShouldThrowException" classname="com.censusanalyser.CensusAnalyserTest" time="0.002"/>
+  <testcase name="givenIndianCensusData_WhenSortedOnPopulationDensity_ShouldReturnSortedResult" classname="com.censusanalyser.CensusAnalyserTest" time="0.114"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -126,5 +126,23 @@ public class CensusAnalyserTest {
             Assert.assertEquals(CensusAnalyserException.ExceptionType.NO_CENSUS_DATA, e.type);
         }
     }
+
+    //UC7
+    @Test
+    public void givenIndianCensusData_WhenSortedOnArea_ShouldReturnSortedResult() {
+        censusAnalyser.loadIndiaCensusData(INDIA_CENSUS_CSV_FILE_PATH);
+        String sortedCensusData = censusAnalyser.getSortedCensusData("area");
+        IndiaCensusCSV[] censusCSV = new Gson().fromJson(sortedCensusData, IndiaCensusCSV[].class);
+        Assert.assertEquals("Goa", censusCSV[0].state);
+    }
+
+    @Test
+    public void givenIndianCensusData_WhenSortedOnAreaAndNoDataFound_ShouldReturnException() {
+        try {
+            censusAnalyser.getSortedCensusData("area");
+        } catch(CensusAnalyserException e) {
+            Assert.assertEquals(CensusAnalyserException.ExceptionType.NO_CENSUS_DATA, e.type);
+        }
+    }
 }
 
