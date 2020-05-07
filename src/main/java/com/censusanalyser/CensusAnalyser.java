@@ -1,8 +1,6 @@
 package com.censusanalyser;
 
 import com.censusanalyser.exception.CensusAnalyserException;
-import com.censusanalyser.model.IndiaCensusCSV;
-import com.censusanalyser.model.USCensusCSV;
 import com.google.gson.Gson;
 
 import java.util.*;
@@ -19,13 +17,12 @@ public class CensusAnalyser {
 
     CensusLoader censusLoader = new CensusLoader();
 
-    public int loadIndiaCensusData(String... csvFilePath) {
-        censusMap = censusLoader.loadCensusData(IndiaCensusCSV.class, csvFilePath);
-        return censusMap.size();
+    public enum Country {
+        INDIA, US, FRANCE;
     }
 
-    public int loadUSCensusData(String csvFilePath) {
-        censusMap = censusLoader.loadCensusData(USCensusCSV.class, csvFilePath);
+    public int loadCensusData(Country country,String... csvFilePath) {
+        censusMap = censusLoader.loadCensusData(country, csvFilePath);
         return censusMap.size();
     }
 
