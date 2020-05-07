@@ -15,14 +15,12 @@ public class CensusAnalyser {
         this.censusMap = new HashMap<String, CensusDAO>();
     }
 
-    CensusLoader censusLoader = new CensusLoader();
-
     public enum Country {
         INDIA, US, FRANCE;
     }
 
     public int loadCensusData(Country country,String... csvFilePath) {
-        censusMap = censusLoader.loadCensusData(country, csvFilePath);
+        censusMap = CensusAdapterFactory.loadCensusData(country, csvFilePath);
         return censusMap.size();
     }
 
