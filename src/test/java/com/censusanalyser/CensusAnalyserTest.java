@@ -265,5 +265,16 @@ public class CensusAnalyserTest {
             Assert.assertEquals(CensusAnalyserException.ExceptionType.NO_CENSUS_DATA, e.type);
         }
     }
+
+    @Test
+    public void givenIndiaAndUSCensusData_WhenSortedOnPopulation_ShouldReturnMaximumValue() {
+        censusAnalyser.loadCensusData(CensusAnalyser.Country.INDIA,INDIA_CENSUS_CSV_FILE_PATH,INDIA_STATE_CSV_FILE_PATH);
+        String sortedIndiaCensusData = censusAnalyser.getSortedCensusData("populationDensity", "descending");
+        IndiaCensusCSV[] indiaCensusCSV = new Gson().fromJson(sortedIndiaCensusData, IndiaCensusCSV[].class);
+        censusAnalyser.loadCensusData(CensusAnalyser.Country.US,US_CENSUS_CSV_FILE_PATH);
+        String sortedUSCensusData = censusAnalyser.getSortedCensusData("populationDensity", "descending");
+        USCensusCSV[] usCensusCSV = new Gson().fromJson(sortedUSCensusData, USCensusCSV[].class);
+        Assert.assertEquals(true, usCensusCSV[0].population < indiaCensusCSV[0].population);
+    }
 }
 
