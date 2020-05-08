@@ -7,12 +7,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class CensusAnalyser {
-    List<CensusDAO> censusList = null;
+    private final Country country;
     Map<String, CensusDAO> censusMap = null;
 
-    public CensusAnalyser() {
-        this.censusList = new ArrayList<CensusDAO>();
-        this.censusMap = new HashMap<String, CensusDAO>();
+    public CensusAnalyser(Country country) {
+        this.country = country;
     }
 
     public enum Country {
@@ -25,9 +24,8 @@ public class CensusAnalyser {
     }
 
     public String getSortedCensusData(String sortOn, String... sortBy) {
-        censusList = censusMap.values().stream().collect(Collectors.toList());
         Comparator<CensusDAO> censusComparator = null;
-        if (censusList == null || censusList.size() == 0) {
+        if (censusMap == null || censusMap.size() == 0) {
             throw new CensusAnalyserException("No Census Data", CensusAnalyserException.ExceptionType.NO_CENSUS_DATA);
         }
         if (sortOn == "state") {
@@ -41,24 +39,14 @@ public class CensusAnalyser {
         } else if (sortOn == "area") {
             censusComparator = Comparator.comparing(census -> census.totalArea);
         }
-        this.sort(censusComparator);
+        ArrayList censusDTO = censusMap.values().stream()
+                .sorted(censusComparator)
+                .map(censusDAO -> censusDAO.getCensusDTO(country))
+                .collect(Collectors.toCollection(ArrayList::new));
         if (sortBy.length == 1) {
-            Collections.reverse(censusList);
+            Collections.reverse(censusDTO);
         }
-        String sortedStateCensus = new Gson().toJson(censusList);
+        String sortedStateCensus = new Gson().toJson(censusDTO);
         return sortedStateCensus;
-    }
-
-    private void sort(Comparator<CensusDAO> censusComparator) {
-        for (int i = 0; i < censusList.size() - 1; i++) {
-            for (int j = 0; j < censusList.size() - i - 1; j++) {
-                CensusDAO census1 = censusList.get(j);
-                CensusDAO census2 = censusList.get(j + 1);
-                if (censusComparator.compare(census1, census2) > 0) {
-                    censusList.set(j, census2);
-                    censusList.set(j + 1, census1);
-                }
-            }
-        }
     }
 }

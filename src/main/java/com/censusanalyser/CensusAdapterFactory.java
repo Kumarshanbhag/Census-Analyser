@@ -10,7 +10,6 @@ public class CensusAdapterFactory {
             return new IndiaCensusAdapter().loadCensusData(csvFilePath);
         else if(country.equals(CensusAnalyser.Country.US))
             return new USCensusAdapter().loadCensusData(csvFilePath);
-        else
-            throw new CensusAnalyserException("Incorrect Country",CensusAnalyserException.ExceptionType.INVALID_COUNTRY);
+        throw new CensusAnalyserException("Incorrect Country",CensusAnalyserException.ExceptionType.INVALID_COUNTRY);
     }
 }
