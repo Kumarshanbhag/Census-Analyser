@@ -1,5 +1,6 @@
-package com.censusanalyser;
+package com.censusanalyser.dao;
 
+import com.censusanalyser.analyser.CensusAnalyser;
 import com.censusanalyser.model.IndiaCensusCSV;
 import com.censusanalyser.model.USCensusCSV;
 

@@ -1,5 +1,6 @@
-package com.censusanalyser;
+package com.censusanalyser.adapter;
 
+import com.censusanalyser.dao.CensusDAO;
 import com.censusanalyser.model.USCensusCSV;
 
 import java.util.Map;

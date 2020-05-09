@@ -1,4 +1,4 @@
-package com.censusanalyser;
+package com.censusanalyser.builder;
 
 import com.censusanalyser.model.IndiaCensusCSV;
 

@@ -1,5 +1,5 @@
 
-package com.censusanalyser;
+package com.censusanalyser.builder;
 
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
